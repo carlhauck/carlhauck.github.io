@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/override.css" />
 	</head>
 	<body class="is-preload">
 
@@ -34,10 +35,11 @@
 						<header class="major">
 							<h2>About</h2>
 						</header>
-						<span class="image fit main"><img src="images/chbnw.jpg" alt="" /></span>
-						<p>Hi, I'm Carl (as the graffiti above announces in ALL CAPS)!</p>
-						<p>I'm a former high school English teacher who got his start in the Tech world as a Solutions Analyst at a mid-sized SaaS company. I'm currently enrolled in Actualize Coding Bootcamp, and will be graduating in August.</p>
-						<p>Outside of work, I enjoy reading, creating music, developing board games, eating ice cream, and painting hopelessly amateurish paintings. I think I'm also developing a strange and disturbing affinity for washing dishes.</p>
+						<span class="image fit main"><img src="images/chcolor.jpg" alt="" /></span>
+						<p>Hi, I'm Carl (as the graffiti above announces in all caps)!</p>
+						<p>I'm a former high school English teacher who got his start in the tech world as a Solutions Analyst at a mid-sized SaaS company. I graduated from Actualize Coding Bootcamp in August 2020 and am currently seeking a position as a software engineer.</p>
+						<p>I am a firm believer in the value of continual learning and improvement, data-backed storytelling, and mission-driven technology. Throughout my professional career, I’ve dedicated myself not only to being a dependable and detail-oriented collaborator, but also to spreading curiosity, creativity, and humor in the workplace.</p>
+						<p>Outside of work, I enjoy reading, creating music, developing board games, and eating ice cream. In quarantine, I've also developed a strange (and perhaps disturbing) affinity for washing dishes.</p>
 					</div>
 					<a href="#two" class="goto-next scrolly">Next</a>
 				</div>
@@ -51,7 +53,16 @@
 						<header class="major">
 							<h2>Portfolio</h2>
 						</header>
-						<p>Coming soon...</p>
+						<h3>Folded Map</h3>
+						<div class="youtube-container">
+							<iframe class="youtube-video" src="https://www.youtube.com/embed/aU6crCpdW9I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+						<p class="video-caption">Capstone presentation video. My presentation is first (~6 min in length followed by a couple minutes of Q&A).</p>
+						<small><p>This web app, built as a capstone project for Actualize Coding Bootcamp, was inspired by Englewood photographer/activist Tonika Lewis Johnson's <a href="https://www.foldedmapproject.com/">Folded Map™</a>, which "visually connects residents who live at corresponding addresses on the North and South Sides of Chicago" in an effort to interrogate the impact of decades of urban segregation (by way of redlining, restrictive covenants, blockbusting, land contracts, etc.) and inequitable community investment. The app leverages a Ruby on Rails backend, a PostgreSQL database with several models and join tables, and a Vue.js frontend, and it incorporates HERE Geocoding and Search API, Mapbox API, and WebSocket functionality.</p>
+						<p>Upon starting work on the app, I reached out to Tonika about the idea: to expand upon the scope of her project by allowing Chicago residents to "match" with Map Twins on their own via an app (without requiring her involvement to facilitate that connection). Ideally, the app would serve as a democratized supplement to/extension of her artistic vision, something that could help break down interpersonal borders and spark connections that have been foreclosed again and again by segregation. Tonika responded to let me know that she's already been working with an educational game developer on a Folded Map app, but she nonetheless welcomed and encouraged me, graciously, to build my own test/sample app.</p>
+						<p>In Tonika Johnson's project, Map Twins are people who share the same street and house number, but live on mirroring N/S sides of the city (e.g., 6900 N Paulina St and 6900 S Paulina St, addresses that are roughly 13.5 miles apart). This app matches Chicagoans based on that definition, but it also attempts to take into account the many Chicagoans who live either on E/W streets or on N/S streets that don't span the entire city.</p>
+						<p>When a new user signs up and provides their address, the app sends a GET request containing their input address to a third-party API that returns standardized address info and lat/long coordinates. It then checks for the aforementioned same-street/same-house number condition. If that condition isn't met, it uses the average latitude of Madison Street's N/S dividing line to make another API request (this time using reverse geocoding) to find the nearest address to a coordinate containing the input address' longitude and its mirroring latitude.</p>
+						<p>In addition to matching Map Twins, the app assigns users to a Block Twin Community (which includes members of their own block and members of the block that mirrors their own. These half-mile by half-mile "blocks" are based on Chicago's grid system. (If you're unfamiliar with that grid system, imagine the city of Chicago as a sheet of graph paper with the official city center (the intersection at State and Madison) as the (0, 0) x/y axis point. For the purposes of this app, the block that's eight blocks west and nine blocks south of that point is paired with the block that's eight blocks west and nine blocks north of that central intersection.)</p></small>
 						<!-- <ul class="icons-grid">
 							<li>
 								<span class="icon solid major fa-camera-retro"></span>
