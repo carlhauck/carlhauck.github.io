@@ -68,7 +68,7 @@ h1 {
 }
 
 svg {
-  margin: 0.75em;
+  margin: 0.5em;
 }
 
 svg.monochrome g,
@@ -152,10 +152,17 @@ a:hover {
 
 .port-title {
   color: var(--color3); 
-  font-size: 1.2em;
+  font-size: 1.3em;
+  margin-bottom: 0;
 }
 
 .port-tech {
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.3em;
+}
+
+.port-date {
+  margin-top: 0;
   color: rgba(255, 255, 255, 0.5);
 }
 
